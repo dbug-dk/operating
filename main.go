@@ -17,7 +17,6 @@ limitations under the License.
 package main
 
 import (
-	"context"
 	"flag"
 	"os"
 	"path/filepath"
@@ -122,11 +121,11 @@ func main() {
 	}
 
 	// +kubebuilder:scaffold:builder
-	setupLog.Info("initialize webhook")
-	if err := webhook.Initialize(context.Background(), config, dnsName, certDir); err != nil {
-		setupLog.Error(err, "unable to initialize webhook")
-		os.Exit(1)
-	}
+	//setupLog.Info("initialize webhook")
+	//if err := webhook.Initialize(context.Background(), config, dnsName, certDir); err != nil {
+	//	setupLog.Error(err, "unable to initialize webhook")
+	//	os.Exit(1)
+	//}
 
 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
 		setupLog.Error(err, "unable to set up health check")
